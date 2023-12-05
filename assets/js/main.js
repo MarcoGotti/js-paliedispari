@@ -12,7 +12,7 @@ Dichiariamo chi ha vinto.Consigli del giorno
 */
 
 
-//create var utility
+/* //create var utility
 
 let drow = (''); //word reverse is drow!!!!
 
@@ -31,16 +31,43 @@ const word = prompt('type a word');
 paliCheck(word);
 
 console.log(drow);
-//check if word === drow
+
+//final check
 if (word === drow) {
     console.log('Yes');    
 } else {
     console.log('No');
+} */
+
+//PARI O DISPARI
+//console.log('PARI E DISPARI');
+
+//pick even  or odd
+const userChoice = prompt('write E for Even or O for Odd');
+//pick a numb 1 to 5
+const userNumber = Number(prompt('type a number 1-5'));
+console.log(userNumber);
+//generate random number 1-5
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * max) + min;
 }
 
+//console.log(randomNumber(1, 5));
+const rdmNumber = (randomNumber(1, 5));
+console.log(rdmNumber);
+const rdmSum = (rdmNumber + userNumber);
+console.log(rdmSum);
 
+//decide weather the random result is even or odd
+function modulusDivision(rdmSum){
+    if (((rdmSum % 2 == 0) && (userChoice === 'E')) || ((rdmSum % 2 !== 0) && (userChoice === 'O')))  {
+        result = (`you win! ${rdmSum} is ${userChoice}`) //why not const result = () or let result = ()   ????     
+    } else if (((rdmSum % 2 !== 0) && (userChoice === 'E')) || ((rdmSum % 2 == 0) && (userChoice === 'O'))){
+        result = (`you lose! ${rdmSum} is not ${userChoice}`)
+    } 
+    console.log(result); 
+    return result
+}
 
-//}
-
-/* const word = prompt('Typa a word');
-paliCheck(word); */
+const modulus = (modulusDivision(rdmSum));
+console.log(modulus);
