@@ -16,25 +16,27 @@ Dichiariamo chi ha vinto.Consigli del giorno
 
 //create var utility
 
-let drow = (''); //word reverse is drow!!!!
+
 
 //function to create drow (word-reverse)
 function paliCheck(word){
+    let drow = ''; 
     for (let i = word.length - 1; i >= 0; i--) {
         let element = word[i];
-        drow += element;
+        drow += element; //drow += word[i]
+        // drow = element + drow ciclo da inizio a fine e non da fine a inizio
     } 
     return drow
 }
 
 //input word
 const word = prompt('type a word');
-paliCheck(word);
+let reverse = paliCheck(word);
 
-console.log(drow);
+console.log(reverse);
 
 //final check
-if (word === drow) {
+if (word === reverse) {
     console.log(word + ' is palindroma');    
 } else {
     console.log(word + ' is not palindroma');
