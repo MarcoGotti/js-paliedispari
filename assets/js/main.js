@@ -12,7 +12,7 @@ Dichiariamo chi ha vinto.Consigli del giorno
 */
 /* ************************************************************************** */
 
-/* //PALINDROMA
+//PALINDROMA
 
 
 //function to create drow (word-reverse)
@@ -27,22 +27,28 @@ function paliCheck(word){
 }
 
 //input word
-const word = prompt('type a word');
-let reverse = paliCheck(word);
 
-console.log(reverse);
 
-//final check
-if (word === reverse) {
-    console.log(word + ' is palindroma');    
-} else {
-    console.log(word + ' is not palindroma');
-} */
+
+//final check on the click
+const buttonEl = document.querySelector('button');
+buttonEl.addEventListener('click', function () {
+    const word = document.querySelector('input').value;
+    let reverse = paliCheck(word);
+    if (word === reverse) {
+    document.getElementById('output').innerText = (word + ' is palindroma');    
+    //document.getElementById('output').className = ('text-body-success');
+    } else {
+    document.getElementById('output').innerText = (word + ' is not palindroma');
+    //document.getElementById('output').className = ('text-body-danger');
+    }
+})
+
 
 
 /* ***************************************************************** */
 
-//PARI O DISPARI
+/* //PARI O DISPARI
 //console.log('PARI E DISPARI');
 
 //pick even  or odd
@@ -79,7 +85,7 @@ if (((modulus == 0) && (userChoice === 'E')) || ((modulus !== 0) && (userChoice 
     //const rdmSum = userNumber + rdmNumber;
     console.log('you lose! ' + (userNumber + rdmNumber) + ' is not ' + userChoice);
 }
-
+ */
 
 
 
