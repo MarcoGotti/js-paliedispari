@@ -10,9 +10,11 @@ Dichiariamo chi ha vinto.Consigli del giorno
     Scriviamo sempre in italiano i passaggi che vogliamo fare
     Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
 */
+/* ************************************************************************** */
 
+//PALINDROMA
 
-/* //create var utility
+//create var utility
 
 let drow = (''); //word reverse is drow!!!!
 
@@ -20,7 +22,6 @@ let drow = (''); //word reverse is drow!!!!
 function paliCheck(word){
     for (let i = word.length - 1; i >= 0; i--) {
         let element = word[i];
-        console.log(word[i]);
         drow += element;
     } 
     return drow
@@ -34,12 +35,15 @@ console.log(drow);
 
 //final check
 if (word === drow) {
-    console.log('Yes');    
+    console.log(word + ' is palindroma');    
 } else {
-    console.log('No');
-} */
+    console.log(word + ' is not palindroma');
+}
 
-//PARI O DISPARI
+
+/* ***************************************************************** */
+
+/* //PARI O DISPARI
 //console.log('PARI E DISPARI');
 
 //pick even  or odd
@@ -76,29 +80,8 @@ if (((modulus == 0) && (userChoice === 'E')) || ((modulus !== 0) && (userChoice 
     //const rdmSum = userNumber + rdmNumber;
     console.log('you lose! ' + (userNumber + rdmNumber) + ' is not ' + userChoice);
 }
-
-
-
-/* 
-FIRST ATTEMPT it works but messy
-
-//console.log(randomNumber(1, 5));
-const rdmNumber = (randomNumber(1, 5));
-console.log(rdmNumber);
-const rdmSum = (rdmNumber + userNumber);
-console.log(rdmSum);
-
-//decide weather the random result is even or odd
-function modulusDivision(rdmSum){
-    if (((rdmSum % 2 == 0) && (userChoice === 'E')) || ((rdmSum % 2 !== 0) && (userChoice === 'O')))  {
-        result = (`you win! ${rdmSum} is ${userChoice}`) //why not const result = () or let result = ()   ????     
-    } else if (((rdmSum % 2 !== 0) && (userChoice === 'E')) || ((rdmSum % 2 == 0) && (userChoice === 'O'))){
-        result = (`you lose! ${rdmSum} is not ${userChoice}`)
-    } 
-    console.log(result); 
-    return result
-}
-
-const modulus = (modulusDivision(rdmSum));
-console.log(modulus);
  */
+
+
+
+
