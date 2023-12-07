@@ -22,30 +22,29 @@
             <div class="col-6 text-end">
                 <h6>Punta tutto su <span class="text-uppercase">pari </span>o <span class="text-uppercase">dispari </span></h6>
             </div>
-            <div class="col-6">
-                <input type="text">
+            <div class="col-2">
+               <!--  <input type="text" id="inputChoice" placeholder="Insert E (Even) or O (Odd)"> -->
+               <select id="inputChoice" class="form-select" aria-label="Choice Even  Odd">
+                <option value="1">Pari</option>
+                <option value="2">Dispari</option>
+              </select>
             </div>
         </div>
         <div class="row flex-row-reverse mb-5">
             <div class="col-6">
-                <h6>Scegli un numero tra 1 e 5</h6>
+                <h6>Scegli un numero</h6>
             </div>
             <div class="col-6 text-end ">
-                <input type="text">
+                <input type="number" id="inputNumber" placeholder="Insert a number 1-5" min="1" max="5">
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <h6>Tenta la fortuna</h6>
-            </div>
+        <div class="row justify-content-center">
             <div class="col-12 text-center mb-3 ">
-                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" id="button" class="btn btn-dark">Try your luck</button>
             </div>
-            <div class="col-12 text-center">
-                <h6 class="text-uppercase ">numero</h6>
-                <div>#</div>
-                <div><i class="fa-solid fa-thumbs-up"></i></div>
-
+            <div class="col-2 text-center rounded-2  result d-none">
+                <div id="numero">#</div>
+                <div id="thumb"><i class="fa-solid fa-thumbs-up"></i></div>
             </div>
         </div>
         

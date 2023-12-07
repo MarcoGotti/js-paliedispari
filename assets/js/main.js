@@ -51,44 +51,43 @@ buttonEl.addEventListener('click', function () {
 
 /* ***************************************************************** */
 
-/* //PARI O DISPARI
-//console.log('PARI E DISPARI');
-
-//pick even  or odd
-const userChoice = prompt('write E for Even or O for Odd');
-
-//pick a numb 1 to 5
-const userNumber = Number(prompt('type a number 1-5'));
-console.log(userNumber);
-
-//generate random number 1-5 with a function
-function randomNumber(min, max) {
-    return Math.floor(Math.random() * max) + min;
-}
-
-const rdmNumber = (randomNumber(1, 5));
-console.log(rdmNumber);
-console.log(rdmNumber + userNumber);
-
-//Sum the two numbers and determine if sum is even or odd
-function sum(num_1, num_2){
-    return ((num_1 + num_2) % 2)
-}
-
-sum(userNumber, rdmNumber);
-const modulus = sum(userNumber, rdmNumber);
-console.log(modulus);
+//PARI O DISPARI
 
 //declare the winner
+document.getElementById('button').addEventListener('click', function (){
+    //pick even  or odd
+    const userChoice = document.getElementById('inputChoice').value
+    //pick a numb 1 to 5
+    const userNumber = Number(document.getElementById('inputNumber').value)
+    //generate random number 1-5 with a function
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * max) + min;
+    }
+    //Sum the two numbers and determine if sum is even or odd
+    function sum(num_1, num_2){
+        return ((num_1 + num_2) % 2)
+    }
 
-if (((modulus == 0) && (userChoice === 'E')) || ((modulus !== 0) && (userChoice === 'O'))) {
-    //const rdmSum = userNumber + rdmNumber;
-    console.log('you win! ' + (userNumber + rdmNumber) + ' is ' + userChoice);
-} else {
-    //const rdmSum = userNumber + rdmNumber;
-    console.log('you lose! ' + (userNumber + rdmNumber) + ' is not ' + userChoice);
-}
- */
+    const rdmNumber = Number(randomNumber(1, 5));
+    const total = (userNumber + rdmNumber);
+    const modulus = sum(userNumber, rdmNumber);
+
+    if (((modulus == 0) && (userChoice === '1')) || ((modulus !== 0) && (userChoice === '2'))) {
+        document.querySelector('.result').classList.remove('d-none');
+        document.querySelector('.result').classList.add('text-bg-success');
+        document.querySelector('.result').classList.remove('text-bg-danger');
+        document.getElementById('numero').innerText = (`${userNumber} + ${rdmNumber} = ${total}`);
+        document.getElementById('thumb').innerHTML = ('<i class="fa-solid fa-thumbs-up"></i>' + ' you win! ' + (userNumber + rdmNumber) + ' is ' + userChoice);
+    } else {
+        document.querySelector('.result').classList.remove('d-none');
+        document.querySelector('.result').classList.add('text-bg-danger');
+        document.querySelector('.result').classList.remove('text-bg-success');
+        document.getElementById('numero').innerText = (`${userNumber} + ${rdmNumber} = ${total}`);
+        document.getElementById('thumb').innerHTML = ('<i class="fa-solid fa-thumbs-down"></i>' + ' you lose! ' + (userNumber + rdmNumber) + ' is not ' + userChoice);  
+    }
+})
+
+
 
 
 
