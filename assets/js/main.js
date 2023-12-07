@@ -32,15 +32,18 @@ function paliCheck(word){
 
 //final check on the click
 const buttonEl = document.querySelector('button');
+const outputEl = document.getElementById('output');
 buttonEl.addEventListener('click', function () {
     const word = document.querySelector('input').value;
     let reverse = paliCheck(word);
     if (word === reverse) {
-    document.getElementById('output').innerText = (word + ' is palindroma');    
-    //document.getElementById('output').className = ('text-body-success');
+    outputEl.innerText = (word + ' is palindroma');    
+    outputEl.classList.add('text-bg-success');
+    outputEl.classList.remove('text-bg-danger');
     } else {
-    document.getElementById('output').innerText = (word + ' is not palindroma');
-    //document.getElementById('output').className = ('text-body-danger');
+    outputEl.innerText = (word + ' is not palindroma');
+    outputEl.classList.add('text-bg-danger');
+    outputEl.classList.remove('text-bg-success');
     }
 })
 
