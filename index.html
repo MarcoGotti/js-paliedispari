@@ -11,10 +11,11 @@
     <div class="container py-4 ">
         <h3>Cosa significa palindroma?</h3>
         <h6>Inserisci una parola e scopri se è <span class="text-uppercase text-decoration-underline">palindroma</span></h6>
-        <input id="input" class="my-3 py-1" type="text">
+        <input id="input" class="my-3 py-1" type="text" style='text-transform:uppercase'>
         <button type="button" class="btn btn-dark">Check</button>
         <div id="output" class="d-inline-block ms-5 rounded-2 px-3"></div>        
     </div>
+    <!-- ./ PALINDROMA -->
     <hr>
     <div class="container py-4 ">
         <h3 class="text-center mb-5">Gioca contro Bobby</h3>
@@ -25,8 +26,8 @@
             <div class="col-2">
                <!--  <input type="text" id="inputChoice" placeholder="Insert E (Even) or O (Odd)"> -->
                <select id="inputChoice" class="form-select" aria-label="Choice Even  Odd">
-                <option value="1">Pari</option>
-                <option value="2">Dispari</option>
+                <option value="pari">Pari</option>
+                <option value="dispari">Dispari</option>
               </select>
             </div>
         </div>
@@ -42,7 +43,7 @@
             <div class="col-12 text-center mb-3 ">
                 <button type="button" id="button" class="btn btn-dark">Try your luck</button>
             </div>
-            <div class="col-2 text-center rounded-2  result d-none">
+            <div class="col-3 text-center rounded-2 result d-none">
                 <div id="numero">#</div>
                 <div id="thumb"><i class="fa-solid fa-thumbs-up"></i></div>
             </div>

@@ -31,21 +31,34 @@ function paliCheck(word){
 
 
 //final check on the click
+
 const buttonEl = document.querySelector('button');
 const outputEl = document.getElementById('output');
+
 buttonEl.addEventListener('click', function () {
+
     const word = document.querySelector('input').value;
     let reverse = paliCheck(word);
-    if (word === reverse) {
-    outputEl.innerText = (word + ' is palindroma');    
+    const wordUpperCase =  word.toUpperCase();
+
+    if (word == ''){
+        alert('⚠ you forgot to insert a word')
+    
+    } else if (word === reverse) {
+    outputEl.innerText = (wordUpperCase + ' is palindroma');    
     outputEl.classList.add('text-bg-success');
     outputEl.classList.remove('text-bg-danger');
+    
     } else {
-    outputEl.innerText = (word + ' is not palindroma');
+    outputEl.innerText = (wordUpperCase + ' is not palindroma');
     outputEl.classList.add('text-bg-danger');
     outputEl.classList.remove('text-bg-success');
     }
+
+    document.querySelector('input').value = '';
 })
+
+
 
 
 
@@ -61,7 +74,8 @@ document.getElementById('button').addEventListener('click', function (){
     const userNumber = Number(document.getElementById('inputNumber').value)
     //generate random number 1-5 with a function
     function randomNumber(min, max) {
-        return Math.floor(Math.random() * max) + min;
+        //return Math.floor(Math.random() * max) + min;
+        return Math.floor(Math.random() * (max-min) + 1) + min; 
     }
     //Sum the two numbers and determine if sum is even or odd
     function sum(num_1, num_2){
@@ -72,7 +86,7 @@ document.getElementById('button').addEventListener('click', function (){
     const total = (userNumber + rdmNumber);
     const modulus = sum(userNumber, rdmNumber);
 
-    if (((modulus == 0) && (userChoice === '1')) || ((modulus !== 0) && (userChoice === '2'))) {
+    if (((modulus == 0) && (userChoice === 'pari')) || ((modulus !== 0) && (userChoice === 'dispari'))) {
         document.querySelector('.result').classList.remove('d-none');
         document.querySelector('.result').classList.add('text-bg-success');
         document.querySelector('.result').classList.remove('text-bg-danger');
@@ -85,6 +99,7 @@ document.getElementById('button').addEventListener('click', function (){
         document.getElementById('numero').innerText = (`${userNumber} + ${rdmNumber} = ${total}`);
         document.getElementById('thumb').innerHTML = ('<i class="fa-solid fa-thumbs-down"></i>' + ' you lose! ' + (userNumber + rdmNumber) + ' is not ' + userChoice);  
     }
+    
 })
 
 
